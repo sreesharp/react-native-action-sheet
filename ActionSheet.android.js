@@ -161,6 +161,7 @@ export default class ActionSheet extends React.Component {
       toValue: 0.3,
       easing: Easing.in(Easing.linear),
       duration: OPACITY_ANIMATION_TIME,
+      useNativeDriver: false,
     }).start();
 
     BackAndroid.addEventListener('actionSheetHardwareBackPress', this._animateOut);
@@ -193,6 +194,7 @@ export default class ActionSheet extends React.Component {
       toValue: 0,
       easing: Easing.in(Easing.linear),
       duration: OPACITY_ANIMATION_TIME,
+      useNativeDriver: false,
     }).start(result => {
       if (result.finished) {
         this.setState({
@@ -206,6 +208,7 @@ export default class ActionSheet extends React.Component {
       toValue: -this.state.sheetHeight,
       easing: Easing.inOut(Easing.ease),
       duration: Y_ANIMATION_TIME,
+      useNativeDriver: false,
     }).start();
 
     return true;
@@ -227,6 +230,7 @@ export default class ActionSheet extends React.Component {
       toValue: 0,
       easing: Easing.inOut(Easing.ease),
       duration: Y_ANIMATION_TIME,
+      useNativeDriver: false,
     }).start(result => {
       if (result.finished) {
         this.setState({
